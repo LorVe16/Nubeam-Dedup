@@ -102,8 +102,8 @@ def complementare_sequenza(sequenza_basi_azotate):
 
 sc = ps.SparkContext('local[*]', appName='Nubeam-Dedup1')
 spark = SparkSession(sc)  # Associa SparkSession a SparkContext
-
-dDb = sc.textFile('/Users/federica/PycharmProjects/GEBDproject/data/1.fq')
+dataset_filepath='/Users/federica/PycharmProjects/GEBDproject/data/1.fq' #insert the filepath of the dataset you're using
+dDb = sc.textFile(dataset_filepath)
 
 #Divido le righe del testo in tuple con relativo indice crescente(0, 1, 2, ..., numero_righe_testo)
 dDati = dDb.zipWithIndex()
